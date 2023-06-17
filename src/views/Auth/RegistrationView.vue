@@ -1,13 +1,13 @@
 <template>
-  <v-container fluid fill-height>
-    <v-row>
+    <v-container fluid fill-height>
+      <v-row>
         <v-col cols="8" offset="2">
           <v-card class="elevetion-12">
             <v-toolbar dark color="primary">
               <v-toolbar-title>Registration</v-toolbar-title>
             </v-toolbar>
             <v-card-text>
-              <v-form v-model="valid" ref="form" validation>
+              <v-form v-model="valid" ref="form" lazy-validation>
                 <v-text-field
                   prepend-icon="mdi-account"
                   name="email"
@@ -73,7 +73,7 @@
     },
     methods: {
       onSubmit() {
-        i f (this.$refs.form.validate()) {
+        if (this.$refs.form.validate()) {
           const user = {
             email: this.email,
             password: this.password,
